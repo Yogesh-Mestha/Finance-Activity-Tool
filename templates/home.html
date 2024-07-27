@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/home.css">
+    <title>Finance premium tool</title>
+
+</head>
+<body>
+  
+    <div class="sidebar close">  
+        <div class="logo-details">
+            <i class='bx bx-menu'></i>
+            <span class="logo_name"></span>
+
+        </div>
+        <ul class="nav-link">
+            <li>
+                <div class="icon_link">
+                <a href="#">
+                    <i class='bx bx-donate-heart'></i>
+                     <span class="link_name">Life Insurance</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub_menu blank">
+                    <li>
+                        <a class="link_name" href="#">Life Insurance</a>
+                    </li>
+                    
+                    <li>
+                        <a href="plan">Plans</a>
+                    </li>
+                    <li>
+                        <a href="bonus">Bonus calculator</a>
+                    </li>
+                    <li>
+                        <a href="agent">Agent Gratuity Calculator</a>
+                    </li>
+
+                </ul>
+
+            </li>
+           
+
+            <li>
+                <div class="icon_link">
+                <a href="#">
+                    <i class='bx bx-bar-chart'></i>
+                     <span class="link_name">Mutual Fund</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub_menu blank">
+                    <li>
+                        <a class="link_name" href="#">Mutual Fund</a>
+                    </li>
+                    <li>
+                        <a href="equity">Equity Fund </a>
+                    </li>
+                    <li>
+                        <a href="debtfinal">Debit Fund</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon_link">
+                <a href="ppf">
+                    <i class='bx bxl-product-hunt'></i>
+                     <span class="link_name">Post office PPF</span>
+                </a>
+               
+                </div>
+
+            
+            </li>
+
+            <li>
+                <div class="icon_link">
+                <a href="#">
+                    <i class='bx bxs-coin'></i>
+                     <span class="link_name">Pension</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub_menu blank">
+                    <li>
+                        <a class="link_name" href="#">Pension</a>
+                    </li>
+                    <li>
+                        <a href="bpension">Basic Pension </a>
+                    </li>
+                    <li>
+                        <a href="fpension">Family Pension</a>
+                    </li>
+                </ul>
+            </li>
+
+            
+            <li>
+                <div class="icon_link">
+                <a href="#">
+                    <i class='bx bxs-bank'></i>
+                     <span class="link_name">Bank</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub_menu blank">
+                    <li>
+                        <a class="link_name" href="#">Bank</a>
+                    </li>
+                    <li>
+                        <a href="ploan">Personal loan EMI calculator</a>
+                    </li>
+                    <li>
+                        <a href="hloan">Home loan EMI calculator</a>
+                    </li>
+                </ul>
+            </li>
+
+            
+            <li>
+                <div class="icon_link">
+                <a href="#">
+                    <i class='bx bxs-coin-stack'></i>
+                     <span class="link_name">Stock</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub_menu blank">
+                    <li>
+                        <a class="link_name" href="#">Stock</a>
+                    </li>
+                    <li>
+                        <a href="ment">Brokarage Calculator</a>
+                    </li>
+                    <li>
+                        <a href="retrun">ROI Calculator</a>
+                    </li>
+                </ul>
+            </li>
+
+            
+           
+
+        </ul>
+
+
+    </div>
+
+    <section class="home-section">
+        <div class="home-content">
+
+          
+            
+            <span class="text">Finance Activity Tool</span>
+
+            <ul>
+                <li>
+                    <a class="active" href="home">Home</a>
+                </li>
+                <li>
+                    <a href="aboutus">About</a>
+                </li>
+                <li>
+                    <a href="help">Help</a>
+                </li>
+            </ul>
+           
+            
+        </div>
+
+        <div class="work-area">
+             
+          {% block body %}{% endblock body %}
+
+
+        </div>
+
+    
+    </section>
+
+    
+   
+
+    <script>
+        let arrow =document.querySelectorAll(".arrow");
+        for (var i=0;i<arrow.length;i++){
+        arrow[i].addEventListener("click",(e)=>{
+            console.log(e);
+            let arrowParent=e.target.parentElement.parentElement;
+            console.log(arrowParent);
+            arrowParent.classList.toggle("showMenu");
+        });
+        
+        }
+
+        let sidebar=document.querySelector(".sidebar");
+        let sidebarBtn=document.querySelector(".bx-menu")
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click",()=>{
+            sidebar.classList.toggle("close");
+
+        });
+
+    </script>
+</body>
+</html>

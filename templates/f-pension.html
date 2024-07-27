@@ -1,0 +1,39 @@
+
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/f-pension.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Family Pension Calculator</h1>
+        <form action="fpcal">
+         
+          <label for="pensionAmount">Average Salary</label>
+          <input type="number" id="salary1" name="salary1" value="{{v1}}" required>
+          <div style="color: red;">{{e1}}</div>
+          <label for="numDependents">Pension Rate</label>
+          <input type="text" id="rate1" name="rate1" value="{{v2}}" required>
+          <div style="color: red;">{{e2}}</div>
+ 
+          {{e3}}
+          <input type="submit" value="CALCULATE">
+          <div class="clear">
+            <a class="reset" href="resetfp">CLEAR</a>
+        </div>
+       
+       
+        <p>The family pension amount is:  {{familyPensionAmount}}</p>
+      </form>
+      </div>
+
+</body>
+</html>
+
+{% endblock body %}

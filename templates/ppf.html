@@ -1,0 +1,65 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>PPF</title>
+    <link rel="stylesheet" href="/static/ppf.css">
+    <script>
+        
+        function changeval(vv){
+            document.getElementById("yiv").value=vv;
+        }
+        function changew(ww){
+            document.getElementById("tpv").value=ww;
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <form action="productppf" autocomplete="off">
+       
+        <div class="container">
+            <div class="hedding">
+                <h1>Post Office PPF Calculator</h1>
+            </div>
+            <div class="contant">
+                Yearly investment
+                 <input type="number" id="yiv" name="yiv"  value="{{v1}}" required><div class="error">{{e1}}</div>
+                <br>
+                <div>
+               <input type="range" min="500" max="150000" id="yi" required name="yi" oninput="changeval(this.value)" >
+                </div>
+                <br>
+                Time period(in years) <input type="number" id="tpv" value="{{v2}}"  required name="tpv"><div class="error">{{e2}}</div>
+                <br>
+                <div class="slidecontainer">
+                <input type="range" min="15" max="50" id="tp" required name="tp" oninput="changew(this.value)" >
+                <!-- <p> Value : <span id="tpv"></span></p> -->
+                </div>
+                <br>
+                Rate of interest
+                <input type="text" value="7.1%" readonly>
+                
+            </div>
+            <input type="submit" value="CALCULATE">
+
+            <div class="clear">
+                <a class="reset" href="resetppf">Clear</a>
+            </div>
+              
+        
+        <div class="result">
+            <h3 style="font-weight: bolder;color:black">Total Invested Amount : {{Investmentamount}}</h3> 
+            <h3 style="font-weight: bolder;color:black"> Total Interst     : {{TotaInterest}}</h3> 
+            <h3 style="font-weight: bolder;color:black"> Maturity Value    :  {{MaturityValue}}</h3> 
+        </div>
+    </div>
+    </form>
+   
+</body>
+</html>
+{% endblock body %}

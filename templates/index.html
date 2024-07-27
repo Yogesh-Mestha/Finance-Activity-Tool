@@ -1,0 +1,78 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+    <div class ="loan-calculator">
+        <div class="top">
+            <h2 style="color:rgb(2, 23, 46);"> Personal Loan Calculator </h2>
+
+            <form action="pl" autocomplete="off">
+                <div class="group">
+                    <div class="title">Amount</div>
+                    <input type="number" style="width:150px;" name="amt1"  value="{{v1}}" class="loan-amount" required/><br>
+                    <div class="error">{{e1}}</div>
+                    <div class="error">{{e2}}</div>
+                    <div class="error">{{e3}}</div>
+                </div> 
+                <div class="group">
+                    <div class="title">Intrest rate</div>
+                    <input type="number"  name="rat1" class="intrest-rate" value="{{v2}}" required/><br>
+                    <div class="error">{{e4}}</div>
+                    <div class="error">{{e5}}</div>
+                    <div class="error">{{e6}}</div>
+                </div>
+                <div class="group">
+                    <div class="title">Tenure(in months)</div>
+                    <input type="number"  name="mnt1" value="{{v3}}" class="loan-tensure" required/><br>
+                    <div class="error">{{e7}}</div>
+                    <div class="error">{{e8}}</div>
+                    <div class="error">{{e9}}</div>
+                </div>
+               
+                   
+            
+        </div>
+        <div class="result">
+            
+            <div class="left">
+                <div class="loan-emi">
+                   
+                    <h3 style="color:green">Loan EMI</h3>
+                    <h3>{{EMI1}}</h3>
+                </div>
+                <div class="total-intrest">
+                    <h3 style="color:green">Total intrest payable</h3>
+                    <h3>{{ti1}}</h3>
+                </div>
+                <div class="total-amount">
+                    <h3 style="color:green">Total Amount</h3>
+                    <h3>{{ta1}}</h3>
+                </div>
+                
+                
+                <input type="submit" value="CALCULATE" class="calculate-btn" style="color:black;"/>
+                <div class="clear">
+                    <a class="reset" href="resetpl">CLEAR</a>
+                 </div>
+               
+            
+         </div>
+        </form>
+            
+        </div>
+
+        <div class="error">{{e}}</div>
+
+    </div>
+
+</body>
+</html>
+{% endblock body %}

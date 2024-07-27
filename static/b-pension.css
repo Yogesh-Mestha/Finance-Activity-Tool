@@ -1,0 +1,131 @@
+.container{
+
+  max-width: 800px;
+  max-height: 1200px;
+  border-radius: 5px;
+  color: rgb(1, 12, 1);
+  background: rgb(201, 238, 235);
+  align-items: center;
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+
+}
+
+.container:hover{
+  box-shadow: 10px 3px rgb(6, 0, 0);
+}
+
+input[type="number"]{
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+.container .clear .reset{
+background-color: #EA4C89;
+border-radius: 8px;
+border-style: none;
+box-sizing: border-box;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-weight: 500;
+height: 40px;
+line-height: 20px;
+list-style: none;
+margin: 0;
+outline: none;
+padding: 10px 16px;
+position: relative;
+text-align: center;
+text-decoration: none;
+transition: color 100ms;
+vertical-align: baseline;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+h1{
+  width: 500px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(22, 22, 84);
+}
+
+label {
+  width: 500px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin: 5px;
+}
+
+
+
+p {
+  font-weight: bold;
+}
+
+
+
+input[type="submit"] {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  min-width: 80px;
+  padding: 0.9em 1.4em;
+  min-height: 40px;
+  font-size: var(--size, 1rem);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+input[type="submit"]:hover {
+  background-position: right top;
+}
+
+input[type="submit"]:is(:focus, :focus-within,:active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}  
+
+.container .error{
+  color: red;
+  font-size: 13px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+input[type="submit"]{
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

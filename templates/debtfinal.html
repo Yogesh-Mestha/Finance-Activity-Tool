@@ -1,0 +1,155 @@
+{% extends "home.html"%}{% block body%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dept Fund Calculator</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+    } 
+    form{
+      margin-top: 100px;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #d5d2d2;
+      border-radius: 5px;
+      margin-left: 500px;
+      width: 400px;
+     
+
+    }
+
+    h2{
+      height: 50px;
+      padding: 10px;
+   }
+
+   input[type="submit"]{
+     padding: 8px 24px;
+     margin:16px 0;
+     font-size: 18px;
+    
+     font-weight: 100;
+     text-transform: uppercase;
+     border: none;
+     background: #333;
+     color: #fff;
+     cursor: pointer;
+ 
+     }
+
+  
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="number"] {
+      width: 200px;
+      padding: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+.container .clear .reset{
+    background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .container div{
+      margin-bottom: 10px;
+    }
+
+    .formeerror{
+      color: red;
+
+    }
+    .error{
+      color: red;
+      font-size: 13px;
+      padding-left: 5px;
+    }
+
+
+  </style>
+</head>
+<body>
+ 
+  <form action="dept" autocomplete="off" name="equityform" >
+  <div class="container">
+    <center>
+    <h2>Dept Fund Calculator</h2>
+  </center>
+    <div class="investment">
+      <label for="investment-amount">Investment Amount</label>
+      <input type="number" id="investment-amount" value="{{v1}}" name="investment-amount" required/>
+      <div class="error">{{e1}}</div>
+    </div>
+    <div class="form-group">
+      <label for="rate-of-return">Interst Rate  (%)</label>
+      <input type="text" id="rate-of-r" name="rate-of-r"  value="11.54" readonly/>
+      <div class="error">{{e2}}</div>
+    </div>
+    <div class="form-group">
+      <label for="investment-period">Investment Duration (years)</label>
+      <input type="number" id="investment-period"  value="{{v3}}" name="investment-period" required/>
+      <div class="error">{{e3}}</div>
+    </div>
+    
+    <center>
+    <input type="submit" value="calculate">
+    </center>
+  
+    <center>  
+       <div class="result">       {{r}}  {{result}}</div>
+    </center>
+    <div class="clear">
+      <a class="reset" href="resetdebt">CLEAR</a>
+   </div>
+ 
+  </div>
+
+</form>
+</body>
+
+
+
+</html>
+{% endblock body%}

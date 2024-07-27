@@ -1,0 +1,78 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/jeevanlabh.css">
+</head>
+<body>
+    
+  <div class="calculator-form">
+    
+    <form action="jl" autocomplete="off">
+      
+    <div class="hedding">
+      <h1>Jeevan Labh-936 Calculator</h1>
+      </div>
+      <div class="form-group">
+        <center>
+        <label for="saa">Sum assured amount </label>
+        <input type="number" id="saa" name="saa" value="{{v1}}" required>
+       <div class="error">{{e1}}</div>
+    
+      </center>
+      </div>
+   
+
+    <div class="form-group">
+      <center>
+      <label for="policyTerm">Policy Term (in Years)</label>
+      <input type="number" id="policyTerm"  placeholder="16 | 21 | 25" value="{{v2}}" name="policyTerm" required>
+      <div class="error">{{e2}}</div>
+      
+     
+    </center>
+    </div>
+
+    
+     <div class="form-group">
+      <center>
+      <label for="age">Current  Age</label>
+      <input type="number" id="age" name="age" value="{{v3}}"  required>
+      <div class="error"> {{e3}}</div>
+     
+    </center>
+    </div> 
+    <div class="form-group button-container">
+      <center>
+        <input type="submit" value="CALCULATE">
+      </center>
+
+    </div>
+    <div class="clear" >
+      <center>
+      <a class="reset" href="resetjl">CLEAR</a>
+    </center>
+  </div>
+   </form>
+    <div class="result1" id="result">
+       
+       
+    </div>
+    <div class="result2" id="result" allign="left">
+
+      Yearly Premium  paid  : {{premium_amount}}
+      <br>
+      Maturity Amount      : {{maturity_amount}}
+      
+      
+     
+  </div>
+  </div>
+
+</body>
+</html>
+{% endblock body %}

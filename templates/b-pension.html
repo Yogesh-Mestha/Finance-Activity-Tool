@@ -1,0 +1,34 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/b-pension.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Basic Pension Calculator</h1>
+        <form action="bp" autocomplete="off">
+          <label for="salary">Average Salary:</label>
+          <input type="number" id="salary" name="salary"  value="{{v1}}" required>
+          <div class="error">{{e1}}</div>
+          <label for="years">Number of years worked:</label>
+          <input type="number" id="years" name="years"  value="{{v2}}" required>
+          <div class="error">{{e2}}</div>
+          <input type="submit" value="CALCULATE">
+          <div class="clear">
+            <a class="reset" href="resetbp">CLEAR</a>
+          </div>
+<br>
+<br>
+        </form>
+        <p>Your pension amount is:  {{pensionAmountans}}</p>
+      </div>
+   
+</body>
+</html>
+{% endblock body %}

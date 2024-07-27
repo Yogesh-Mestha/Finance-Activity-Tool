@@ -1,0 +1,52 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/roi.css">
+   
+</head>
+<body>
+    <center>
+    <div class="invest-calculator">
+        <h2>ROI Calculator</h2>
+        <div class="controls">
+            <form action="returnonin" autocomplete="off">
+                <div class="share">
+                <h3>Amount invested</h3>
+                <input type="number" name="amin"  value="{{a3}}" required/>
+                <div class="error" style="color: red;">{{e1}}</div>
+                <span class="mySpan" id="cpspan"></span>
+            </div>
+            
+                <div class="addtional">
+                    <h3>Amount returned</h3>
+                    <input type="number" value="{{a4}}" name="amre" required/>
+                    <div class="error" style="color: red;" >{{e2}}</div>
+                    <!-- </div>
+                <div class="rate">
+              <h3>Investment period</h3>
+              <input type="number" name="yr" min="0" value="{{a5}}" required />
+            </div> -->
+            
+        </div>
+        
+
+   
+    <div class="result">
+        <button class="calculate-btn">Calculate</button>
+    </div>
+    <div class="clear">
+        <a class="reset" href="resetROI">CLEAR</a>
+    </div>
+    <div class="result-message"><span>Total gain:{{A1}} </span><br><span>Return on Investment(ROI) :{{A2}}%</span> </div>
+</div>
+</form>
+</center>
+</body>
+</html>
+
+{% endblock body %}

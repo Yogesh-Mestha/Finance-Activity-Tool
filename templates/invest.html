@@ -1,0 +1,59 @@
+{% extends "home.html" %}{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/invest.css">
+</head>
+<body>
+    <center>
+    <div class="invest-calculator">
+        <h2>Brokerage  Calculator</h2>
+        <div class="controls">
+            <form action="broker" autocomplete="off">
+                <div class="share">
+                <h3>Number of shares</h3>
+                <input type="number" value="{{v1}}" name="sh" required />
+                
+            </div>
+            <div class="error">{{e1}}</div>
+                <div class="addtional">
+                    <h3>Buying price</h3>
+                    <input type="number" value="{{v2}}" name="by" required />
+                    
+                </div>
+                <div class="error">{{e2}}</div>
+                <div class="rate">
+              <h3>Selling price</h3>
+              <input type="number" value="{{v3}}" name="se" required/>
+              
+            </div>
+            <div class="error">{{e3}}</div>
+            <div class="year">
+              <h3>Brokerage percentage</h3>
+              <input type="text" value="5%" name="pr" readonly required/>
+            </div>
+            
+        </div>
+
+   
+    <div class="result">
+        <button class="calculate-btn">Calculate</button>
+    </div>
+
+    <div class="clear">
+        <a class="reset" href="resetbroker">CLEAR</a>
+     </div>
+
+
+    <div class="result-message"><span>Brokerage Amount:{{Ans}} </span> </div>
+</div>
+</form>
+</center>
+</body>
+</html>
+
+{% endblock body %}
